@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="CAD-Mesher: A Convenient, Accurate, Dense Mesh-based Mapping Module in SLAM for Dynamic Environments">
-  <meta name="keywords" content="CAD-Mesher: A Convenient, Accurate, Dense Mesh-based Mapping Module in SLAM for Dynamic Environments">
+        content="面向地面机器人的通用鲁棒激光SLAM技术">
+  <meta name="keywords" content="面向地面机器人的通用鲁棒激光SLAM技术">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CAD-Mesher</title>
 
@@ -67,38 +67,41 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title" style="margin-bottom: 0"><img src="web/static/images/logo.png" width="80">   <strong>CAD-Mesher</strong></h1>
+          <h1 class="title is-1 publication-title" style="margin-bottom: 0"><img src="web/static/images/logo.png" width="80">   <strong>GR-LOAM++</strong></h1>
           <br>
-          <h2 class="title is-3 publication-title" style="margin-top: 0; margin-bottom: 0">A Convenient, Accurate, Dense Mesh-based Mapping Module in SLAM for Dynamic Environments</h2>
+          <h2 class="title is-3 publication-title" style="margin-top: 0; margin-bottom: 0">面向地面机器人的通用鲁棒激光SLAM技术</h2>
           <!-- <br> -->
           <div class="tmm2025" style="margin-top: 10px; margin-bottom: 20px;">
-            <h2 class="title is-4">IEEE Trans. on MultiMedia 2025</h2>
+            <h2 class="title is-4">机器人</h2>
           </div>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://yaepiii.github.io/">Yanpeng Jia</a><sup>1,2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="author-block">
-              <a href="https://people.ucas.edu.cn/~KFC">Fengkui Cao</a><sup>1*</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="author-block">
-              <a href="https://people.ucas.ac.cn/~siawangting1">Ting Wang</a><sup>1*</sup>
+              <a href="https://yaepiii.github.io/">贾彦鹏</a><sup>1,2</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
             </span>&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="author-block">
-              <a href="https://people.ucas.edu.cn/~ytang">Yandong Tang</a><sup>1</sup>
+              <a href="https://people.ucas.ac.cn/~siawangting1">王挺</a><sup>1*</sup>
             </span>&nbsp;&nbsp;&nbsp;&nbsp;
             <span class="author-block">
-              <a href="https://people.ucas.edu.cn/~shaoshiliang">Shiliang Shao</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://people.ucas.edu.cn/~shaoshiliang">邵士亮</a><sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block">
+              <a href="https://github.com/ROBOT-WSC">王少聪</a><sup>1,2</sup>&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
             <span class="author-block">
-              <a href="https://people.ucas.edu.cn/~lianqingliu">Lianqing Liu</a><sup>1</sup>
+              <a href="">王世逸</a><sup>1,3</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <span class="author-block">
+              <a href="https://people.ucas.edu.cn/~KFC">曹凤魁</a><sup>1</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
             </span>
           </div>
           <!-- <br> -->
           <div class="column is-full_width">
-            <h2 class="is-size-6">* corresponding author</h2>
+            <h2 class="is-size-6">* 通讯作者</h2>
           </div>
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Shenyang Institute of Automation</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="author-block"><sup>2</sup>University of Chinese Academy of Sciences</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>1</sup>沈阳自动化研究所</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>中国科学院大学</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>沈阳理工大学</span>&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
 
           <div class="column has-text-centered">
@@ -113,17 +116,6 @@
                   <span>Paper</span>
                 </a>
               </span>
-          
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/Yaepiii/CAD-Mesher"
-                   class="external-link button is-normal is-rounded is-dark disabled">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span> 
             
               <span class="link-block">
                 <a href="https://drive.google.com/drive/folders/110Hko3zPcDmY0_bnZdXxJXJKe6wr3t10?usp=sharing"
@@ -202,29 +194,16 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3" style="margin-top: -30px">Abstract</h2>
+        <h2 class="title is-3" style="margin-top: -30px">摘要</h2>
         <div class="content has-text-justified">
           <p>
-            Most LiDAR odometry and SLAM systems construct maps in point clouds, which are discrete and sparse when
-            zoomed in, making them not directly suitable for navigation.
-            Mesh maps represent a consecutive and dense map format with
-            low memory consumption, which can approximate complex structures with simple elements, attracting significant attention of researchers in recent years. However, most implementations operate
-            under a static environment assumption. In effect, moving objects
-            cause ghosting, potentially degrading the quality of meshing. To
-            address these issues, we propose a plug-and-play meshing module
-            adapting to dynamic environments, which can be easily integrated
-            with various LiDAR odometry to generally improve the pose
-            estimation accuracy of odometry. In our meshing module, a novel
-            two-stage coarse-to-fine dynamic removal method is designed to
-            effectively filter dynamic objects, generating consistent, accurate,
-            and dense mesh maps. Additionally, conducive to Gaussian
-            process in mesh construction, sliding window-based keyframe
-            aggregation and adaptive downsampling strategies are used to
-            ensure the uniformity of point cloud. We evaluate the localization
-            and mapping accuracy on five publicly available datasets. Both
-            qualitative and quantitative results demonstrate the superiority
-            of our method compared with the state-of-the-art algorithms.
-            The code and introduction video are publicly available at https://yaepiii.github.io/CAD-Mesher.github.io/.
+            针对地面机器人在卫星拒止的非结构化环境中，激光SLAM易产生垂直漂移、精度下降甚至失效的问题，提出一种面向地面机器人的可用于多种雷达的鲁棒激光SLAM算法。
+            首先，使用提出的非超参数地面初始化方法自动完成地面点的提取和分割，并对剩余点云执行基于主成分分析（PCA）的几何和强度特征提取；提取出的地面点和特征点
+            被输入到雷达里程计模块执行三阶段直接特征匹配，在相似性约束和IMU约束的作用下，输出高频率且相对精确的帧间变换估计；在雷达建图模块，以雷达里程计的输出
+            作为初始猜测，通过强度增强的几何特征匹配构建雷达帧间匹配因子，通过前端提取的地面点评估地面的平坦度和连续性以构建地面约束因子，通过IMU的预积分解算构
+            建IMU旋转约束因子和重力约束因子，最后与回环检测因子一并构建因子图执行全局优化，实时输出精确的机器人状态估计和全局地图。在使用地面机器人采集了多个具
+            有挑战性的序列上，与多个算法进行比较的结果表明，本文算法可以得到更精确的机器人状态估计，构建全局一致的地图，并且在地形变化、大尺度、非结构化的场景中
+            更具鲁棒性。
           </p>
         </div>
       </div>
@@ -254,11 +233,6 @@
           <iframe src="https://www.youtube.com/embed/XmaxL6urYHg?si=fuf-4vQgFAIn68aJ"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
-        <br><br><br>
-        <h2 class="subtitle has-text-centered">
-            <strong style="font-size: 0.9em;">CAD-Mesher</strong> can easily integrating with various LiDAR odometry to further improve localization accuracy, 
-            filtering dynamic objects and generating a accurate, consecutive, and dense mesh map.
-        </h2>
       </div>
     </div>
 
@@ -272,22 +246,22 @@
     <!-- Method. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3" style="margin-top: -20px">Method</h2>
+        <h2 class="title is-3" style="margin-top: -20px">系统框架</h2>
 
         <div style="width: 100%; margin: 0 auto; display: flex; justify-content: center;">
-          <img src="./web/resources/pipeline.png" style="width: 150%;">
+          <img src="./web/resources/figure1.png" style="width: 150%;">
         </div>
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            As a mapping module in SLAM, the system receives the raw point in the LiDAR coordinate system at current time, and the pose transformation
-            from the LiDAR coordinate system to the global coordinate system estimated by the odometryas the system input.
-            The keyframe, dropped by the proposed adaptive selection mechanism, is added to the database after visibility-based coarse dynamic removal.
-            The keyframes within the sliding window are subsequently aggregated and converted to the world coordinate system W, then uniformly
-            sampled by the adaptive downsampling strategy to enhance system efficiency. Continuity test is utilized to remove outliers and noise.
-            The remaining points are divided into voxels, GP-based meshing is then conducted. In the optimization component,
-            the pose estimated by the odometry is used as a prior for point-to-mesh registration, aligning the current
-            scan to the global map and outputting the finer pose. Finally, after fine dynamic removal using the voxel-based probabilistic
-            method, the current mesh is fused into the global mesh map for publication.
+            本文系统主要分为4个模块：
+
+            1）特征提取模块：输入激光雷达收集的原始点云，通过KD树搜索每个点的5个最近点，并计算协方差矩阵，对协方差矩阵进行特征值分解后构建直线度、平面度、曲率、法线等判别指标，根据这些指标提取边缘、平面、地面等几何特征，并完成无超参数地面初始化；然后，对强度进行校准后提取强度角点特征作为边缘特征的补充，以提高系统在非结构化场景中的鲁棒性。
+            
+            2）雷达里程计模块：接收提取到的特征，执行三阶段帧到滑动窗口内点云的直接特征匹配，并附加几何、强度约束、以及IMU约束（如果IMU可用），实现高频的帧间状态估计，输出6自由度位姿作为雷达建图模块优化的初始值。
+            
+            3）雷达建图模块：分别构建当前帧与局部子图的点到直线残差和点到平面残差，并结合局部特征值表示的几何相似性以及KL散度表示的强度相似性，构建雷达里程计约束；利用提取的地面点进行地面拟合，构建地面约束，若IMU可用，则再构建IMU旋转约束和重力约束，一并放入因子图中进行优化，输出精确的机器人状态估计，根据机器人移动距离和旋转角度选取关键帧，放入数据库。
+            
+            4）全局优化模块：当有新关键帧添加到数据库时，会执行基于距离搜索的回环检测模块，当检测到候选回环后，进行基于ICP算法的几何验证，若匹配成功，则将回环因子加入到因子图，并执行全局优化减小累计误差，实现全局一致的状态估计。
         </div>
 
       </div>
@@ -325,42 +299,37 @@
       <div class="column is-full-width">
         <h2 class="title is-3 has-text-centered" style="margin-top: -30px">Meshing Evaluation</h2>
 
-        <h3 class="title is-4">Quantitative</h3>
+        <h3 class="title is-4">数据采集平台</h3>
         <div class="content has-text-justified">
           <p>
-            Our method achieves the highest reconstruction precision in both datasets, although its recall are not as high as that of SHINE-Mapping.
-            We attribute this discrepancy to our coarse dynamic removal method inadvertently removing some static points,
-            and the proposed consistency test inadvertently filtering out slender poles along with noise. Nevertheless,
-            our method achieves the highest F1-Score, demonstrating its overall effectiveness. It is also worth noting that SHINE-Mapping
-            is a deep learning-based approach for offline post-processing, which requires extensive training and cannot operate in real time. 
+            为验证本文算法的通用性、精度和鲁棒性，搭建了地面特种机器人平台用于数据采集。该平台配备Velodyne VLP16旋转式机械
+            激光雷达和Livox Mid 360混合固态激光雷达或Livox Avia混合固态激光雷达，三者均以10Hz的频率获取点云数据；IMU型号
+            为Xsens MTi 100，以100Hz的频率获取9轴测量值；使用北斗星通RTK，以1Hz的卫星数据作为SLAM定位真值；同时还配备Rea
+            lsense d455深度相机以30Hz的频率采集图像。
           </p>
         </div>
         
         <div class="hero-body">
-          <img class="rounded" src="./web/resources/quantitative.png" >
+          <img class="rounded" src="./web/resources/figure3.png" >
         </div>
         
 
-        <h3 class="title is-4">Qualitative</h3>
+        <h3 class="title is-4">定位性能比较</h3>
         <div class="content has-text-justified">
           <p>
-            In KITTI07, moving vehicles at intersections leave obvious ghosting in the maps for the other mesh baselines,
-            which impedes following navigation applications. Although VDBFusion migrates dynamic impact using space caving technique,
-            rough ground and residual ghosting still exist. In contrast, our CAD-Mesher effectively filters dynamic objects and ensures
-            map consistency through the proposed two-stage coarse-to-fine dynamic removal strategy. However, few dynamic remnants
-            are still observed in the map, likely related to the chosen resolution and voxel size.
-          </p>
-          <p>
-            In the GroundRobot01 sequence, the sparse-channel LiDAR presents a challenge to registration accuracy and meshing quality.
-            Due to the sparsity of the point cloud, both VDBFusion and SLAMesh produce many holes in the ground,
-            compromising the continuity of mesh map. Although SHINEMapping mitigates the impact of sparsity and generates
-            a dense map, it exhibits stratification in the green box due to odometry drift. However, our method provides more accurate
-            poses for meshing by refining pose estimation of odometry, thereby ensuring consistency of meshing.
+            在我们自己录制的序列上对算法进行评估，并与多种经典算法进行比较，如表1、2、3所示，本文算法均取得了优秀的结果。其中，在GR05这个高动态、大尺度的序列上，大多数算法均产生了巨大的累计误差，甚至导致算法失效，而本文算法即使不启用回环检测，仍实现了最高的精度，
+            当启用回环检测后，本文算法实现了仅1.51m的误差。
           </p>
         </div>
 
         <div class="hero-body">
-          <img class="rounded" src="./web/resources/qualitative.png" >
+          <img class="rounded" src="./web/resources/table1.png" >
+        </div>
+        <div class="hero-body">
+          <img class="rounded" src="./web/resources/table2.png" >
+        </div>
+        <div class="hero-body">
+          <img class="rounded" src="./web/resources/table3.png" >
         </div>
 
         <br>
@@ -375,17 +344,64 @@
 
     <div class="columns is-centered ">
       <div class="column is-full-width">
-        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">localization Evaluation</h2>
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">轨迹比较</h2>
 
         <div class="content has-text-justified">
           <p>
-            Our CAD-Mesher mapping module can seamlessly integrate with various LiDAR odometry systems to further improve localization accuracy.
-            Additionally, the integrated system can effectively cope with highly dynamic scenes and sparse-channel LiDAR data.
+            为了更直观的体现本文算法的效果，选择了GR05、GR09、GR12、GR15、GR17五个典型序列，绘制了每个比较算法的轨迹图，本文算法在每个序列上都实现了与真值轨迹最贴合的轨迹，尤其是在z方向上，通过地面约束，本文算法实现了极小的误差。
           </p>
         </div>
         
         <div class="hero-body">
-          <img class="rounded" src="./web/resources/localization.png" >
+          <img class="rounded" src="./web/resources/figure5.png" >
+        </div>
+
+        <br>
+        <br><br>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered ">
+      <div class="column is-full-width">
+        <h2 class="title is-3 has-text-centered" style="margin-top: -30px">建图比较</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            为了更全面地展现本文算法的优越性，本节定性地展示本文的建图效果。
+
+            在GR05序列上构建的点云地图，可以看出该地图与卫星地图街景高度贴合。通过右侧四个局部放大图可以看出，本文提出的算法构建出了精确的街道点云地图。
+          </p>
+        </div>
+        
+        <div class="hero-body">
+          <img class="rounded" src="./web/resources/figure6.png" >
+        </div>
+
+        <p>
+            在GR09序列上构建的沈自所园区点云地图，从三个局部放大图像可以看出，本文算法对于A区域的非结构化林区环境实现了精确的地图构建，对于B区域和C区域的楼宇环境，对窗户、棱角等细节都实现了精细的还原。
+        </p>
+        <div class="hero-body">
+          <img class="rounded" src="./web/resources/figure7.png" >
+        </div>
+
+        <p>
+            在GR12序列上构建的点云地图，地面机器人配备Livox Mid 360固态雷达穿越了局部放大图所示的地面崎岖不平的非结构化林区环境。由局部放大图可以看出，对林区的树木、电线杆，以及园区中的公交车、建筑都实现了精细的建图效果。
+        </p>
+        <div class="hero-body">
+          <img class="rounded" src="./web/resources/figure8.png" >
+        </div>
+
+        <p>
+            在GR19序列上构建的点云地图，该序列为使用Livox Avia录制的室内环境，相比于室外，室内环境存在典型的双面问题，
+            这通常使得室外好用的SLAM算法普遍失效。而本文算法即使在室内也可以实现精确地定位和建图，根据局部放大细节和显示照片的比对可以看出，本文算法对室内的植物和建筑结构细节也实现了精确的测绘。
+        </p>
+        <div class="hero-body">
+          <img class="rounded" src="./web/resources/figure9.png" >
         </div>
 
         <br>
